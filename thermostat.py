@@ -38,7 +38,7 @@ class Thermostat:
         self.temperature -= self.power_variance
 
 
-class Sensor:
+class Interface:
     __temperature_variance = 0.3 #default variation of temperature between two time-steps
     temperature_history = []
 
@@ -53,8 +53,8 @@ class Sensor:
 
 
 if __name__ == '__main__':
-    test_sensor = Sensor(20, 25)
-    test_sensor.run_time_steps(1000)
+    test_thermostat = Interface(20, 25)
+    test_thermostat.run_time_steps(1000)
 
-    plt.plot(test_sensor.temperature_history)
+    plt.plot(test_thermostat.temperature_history)
     plt.show()
